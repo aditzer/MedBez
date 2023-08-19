@@ -1,16 +1,28 @@
-# medbez
+# MedBez
 
-MedBez App
+## MedBez: Your Secure Health Vault
 
-## Getting Started
+A Flutter based Android Application to upload and share medical documents to multiple stakeholders with the consent of the patient.
 
-This project is a starting point for a Flutter application.
+### It has following features:
+    Create an account using Aadhaar/ ABHA ID.
+    
+    Multiple Account types (Patient, Doctor, Clinic/Hospital, Diagnostics).
+    
+    Upload and store documents securely with Blockchain Technology.
+    
+    Easy sharing between multiple users.
+    
+    Searching documents by name, date, doctor's name, etc.
+    
+    Designated folder options for every user.
 
-A few resources to get you started if this is your first Flutter project:
+### Steps to run app:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  1. Backend link: https://github.com/amantripathi038/MediLocker
+  
+  2. Set your IP and port number same as backend server to run app.
+  
+  3. Change it from lib -> common -> constants -> constants.dart -> ip variable
+  
+  4. Generate apk and run on your android device.
