@@ -19,7 +19,7 @@ const customLoading = SpinKitThreeBounce(
   size: 50.0,
 );
 
-String ip = "192.168.0.101:3000";
+String ip = "YOUR IP GOES HERE";
 String serverUrl = "http://$ip/api/v1";
 
 String patientLoginUrl = "$serverUrl/patient/login";

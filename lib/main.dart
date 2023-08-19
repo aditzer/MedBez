@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:medbez/common/model/vault_record.dart';
 import 'package:medbez/common/theme/app_theme.dart';
 import 'package:medbez/common/view/get_started.dart';
 import 'package:medbez/diagnostic_center/model/diagnostic_center.dart';
@@ -12,24 +11,23 @@ import 'package:medbez/hospital/model/hospital.dart';
 import 'package:medbez/hospital/view/hospital_home.dart';
 import 'package:medbez/patient/model/patient.dart';
 import 'package:medbez/patient/view/patient_home.dart';
-import 'package:provider/provider.dart';
-
+import 'package:flutter/services.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
 
   await Hive.initFlutter();
 
   if(await Hive.boxExists('Patient')){
     Patient patient = await loadPatientData();
     runApp(
-        ChangeNotifierProvider(
-          create: (context) => VaultRecordProvider(),
-          child: GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: theme(),
-            home: PatientHome(patientDetails: patient),
-          ),
+        GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: theme(),
+          home: PatientHome(patientDetails: patient),
         )
     );
   }

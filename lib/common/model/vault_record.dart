@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:medbez/common/constants/constants.dart';
 import 'package:medbez/common/model/record.dart';
@@ -31,17 +30,6 @@ class Viewer {
   String aadhar = "";
   String name = "";
   Viewer(this.aadhar, this.name);
-}
-
-class VaultRecordProvider with ChangeNotifier {
-  late VaultRecord _vaultRecordData;
-
-  VaultRecord get vaultRecordData => _vaultRecordData;
-
-  void updateVaultRecord(VaultRecord newVaultRecord) {
-    _vaultRecordData = newVaultRecord;
-    notifyListeners();
-  }
 }
 
 Future<List> getVaultRecords(String token, int from) async {
