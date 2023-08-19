@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:medbez/common/constants/constants.dart';
 
 ThemeData theme() {
   return ThemeData(
       scaffoldBackgroundColor: Colors.white,
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+      colorScheme: ColorScheme.fromSeed(seedColor: primaryGreen),
       useMaterial3: true,
-      appBarTheme: appBarTheme()
+      appBarTheme: appBarTheme(),
   );
 }
 
 AppBarTheme appBarTheme() {
   return const AppBarTheme(
-      elevation: 5,
+      elevation: 2,
       centerTitle: true,
-      iconTheme: IconThemeData(color: Color(0XFF8B8B8B)),
-      backgroundColor: Colors.green,
+      iconTheme: IconThemeData(color: Colors.white),
+      backgroundColor: appBarGreen,
       foregroundColor: Colors.white
   );
 }
